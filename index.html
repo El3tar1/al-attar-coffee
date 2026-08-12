@@ -5,27 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>بن العطار - قهوة تصنع للذوق</title>
     
-    <!-- SEO - ميتا تاجس جوجل -->
+    <!-- SEO -->
     <meta name="description" content="بن العطار - قهوة تصنع للذوق. قهوة تركي 30ج فرنساوي 45ج. أبو كبير - الشرقية - خلف المستشفى المركزي. اطلب الآن 01030516417" />
-    <meta name="keywords" content="بن العطار, قهوة ابو كبير, قهوة تركي, قهوة فرنساوي, الشرقية, coffee shop, بن محوج" />
+    <meta name="keywords" content="بن العطار, قهوة ابو كبير, قهوة تركي, قهوة فرنساوي, الشرقية" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://el3tar1.github.io/al-attar-coffee/" />
-    <!-- خلص SEO -->
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet" />
 
     <style>
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
         }
 
         body {
@@ -33,62 +25,114 @@
             background: #0a0a0a;
             color: #f5f2eb;
             width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* ===== SECTIONS ===== */
-        section {
+        .gold {
+            color: #c9a96e;
+        }
+
+        #hero {
             height: 100vh;
-            width: 100%;
-            scroll-snap-align: start;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* ===== GOLD COLORS ===== */
-        .gold {
-            color: #c9a96e;
-        }
-        .gold-border {
-            border-color: #c9a96e;
-        }
-
-        /* ===== HERO BACKGROUND ===== */
-        #hero {
-            padding: 0;
-            justify-content: center;
-            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2070') center/cover no-repeat;
-        }
-
-        #hero .hero-content {
-            position: relative;
-            z-index: 2;
             text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2070') center/cover;
             padding: 2rem;
-            animation: fadeInUp 1s ease;
         }
 
-        #hero .hero-content h1 {
-            font-size: 5rem;
+        #hero h1 {
+            font-size: 4rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.7);
         }
 
-        #hero .hero-content p {
-            font-size: 1.8rem;
-            font-weight: 300;
-            margin-bottom: 2.5rem;
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
             padding: 18px 45px;
             background: #c9a96e;
-            color: #
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.3rem;
+            border-radius: 50px;
+        }
+
+        #info {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: #111;
+        }
+
+        #info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #c9a96e;
+        }
+
+        .prices {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .price-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #c9a96e;
+            min-width: 200px;
+        }
+
+        .price-card .price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #c9a96e;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: #000;
+            border-top: 1px solid #c9a96e;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero">
+        <h1 class="gold">بن العطار</h1>
+        <p>قهوة تصنع للذوق</p>
+        <a href="tel:01030516417" class="btn">اطلب الآن 01030516417</a>
+    </section>
+
+    <section id="info">
+        <h2>الأسعار</h2>
+        <div class="prices">
+            <div class="price-card">
+                <h3>قهوة تركي</h3>
+                <div class="price">30 جنيه</div>
+            </div>
+            <div class="price-card">
+                <h3>قهوة فرنساوي</h3>
+                <div class="price">45 جنيه</div>
+            </div>
+        </div>
+        <h2>العنوان</h2>
+        <p>أبو كبير - الشرقية - خلف المستشفى المركزي</p>
+    </section>
+
+    <footer>
+        <p>© 2026 بن العطار</p>
+    </footer>
+
+</body>
+</html>
