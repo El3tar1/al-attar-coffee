@@ -8,61 +8,39 @@
 <style>
 body{margin:0;font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;text-align:center}
 .gold{color:#c9a96e}
-
-/* ====== الهيرو بصورة قهوة جديدة وشغالة ====== */
-#hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2070') center/cover;
-  padding:1rem;
-}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2070') center/cover;padding:1rem}
 #hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px}
 #hero p{font-size:1.3rem;margin-bottom:30px}
-
 .btn{display:inline-block;padding:15px 35px;background:#c9a96e;color:#000;text-decoration:none;font-weight:800;font-size:1.1rem;border-radius:50px;margin:8px}
 .btn-whatsapp{background:#25D366;color:#fff}
 .btn-insta{background:#E4405F;color:#fff}
-
 section{padding:4rem 1rem}
 h2{font-size:2.2rem;margin-bottom:2rem;color:#c9a96e}
-
-/* ====== المنتجات ====== */
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:600px;margin:0 auto}
-
-.card{
-  background:#1a1a1a;
-  padding:1.5rem;
-  border-radius:15px;
-  border:2px solid #c9a96e;
-}
-
-/* صورة البن فوق كل منتج */
-.card img{
-  width:100%;
-  max-width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid #c9a96e;
-  margin-bottom:12px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
-
+.card{background:#1a1a1a;padding:1.5rem;border-radius:15px;border:2px solid #c9a96e}
 .price{font-size:1.8rem;font-weight:800;color:#c9a96e}
-
-/* ====== باقي الكود ====== */
 .contact-box{background:#111;padding:2rem;border-radius:15px;max-width:500px;margin:0 auto}
 .contact-box .btn{display:block}
 footer{padding:2rem;background:#000;border-top:1px solid #c9a96e}
+@media(max-width:500px){.products{grid-template-columns:1fr}#hero h1{font-size:2.5rem}}
 
-@media(max-width:500px){
-  .products{grid-template-columns:1fr}
-  #hero h1{font-size:2.5rem}
+/* الدائرة */
+.coffee-icon{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:3px solid #c9a96e;
+  margin:0 auto 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3.5rem;
+  background:#0a0a0a;
+  transition:0.3s;
+}
+.card:hover .coffee-icon{
+  border-color:#f0d080;
+  box-shadow:0 0 30px rgba(201,169,110,0.3);
 }
 </style>
 </head>
@@ -81,25 +59,25 @@ footer{padding:2rem;background:#000;border-top:1px solid #c9a96e}
 <div class="products">
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1580933073521-d6f3fb2332b1?q=80&w=200&h=200&fit=crop" alt="قهوة تركي">
+    <div class="coffee-icon">☕</div>
     <h3>قهوة تركي سادة</h3>
     <div class="price">30 جنيه</div>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1580933073521-d6f3fb2332b1?q=80&w=200&h=200&fit=crop" alt="قهوة تركي محوج">
+    <div class="coffee-icon">🔥</div>
     <h3>قهوة تركي محوج</h3>
     <div class="price">35 جنيه</div>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=200&h=200&fit=crop" alt="قهوة فرنساوي">
+    <div class="coffee-icon">🇫🇷</div>
     <h3>قهوة فرنساوي سادة</h3>
     <div class="price">45 جنيه</div>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=200&h=200&fit=crop" alt="قهوة فرنساوي محوج">
+    <div class="coffee-icon">⭐</div>
     <h3>قهوة فرنساوي محوج</h3>
     <div class="price">50 جنيه</div>
   </div>
