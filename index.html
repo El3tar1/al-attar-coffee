@@ -9,41 +9,30 @@
 body{margin:0;font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;text-align:center}
 .gold{color:#c9a96e}
 
+/* ====== نبض للشعار ====== */
+.pulse-gold{
+  animation:pulseGold 2s ease-in-out infinite;
+  display:inline-block;
+}
+@keyframes pulseGold{
+  0%,100%{text-shadow:0 0 20px rgba(201,169,110,0.2)}
+  50%{text-shadow:0 0 50px rgba(201,169,110,0.6), 0 0 80px rgba(201,169,110,0.3)}
+}
+
+/* ====== هيرو ====== */
 #hero{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2070') center/cover;
+  background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2070') center/cover;
   padding:1rem;
-  position:relative;
-  overflow:hidden;
 }
+#hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px}
+#hero p{font-size:1.3rem;margin-bottom:30px}
 
-#hero::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:radial-gradient(ellipse at 30% 50%, rgba(201,169,110,0.05) 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, rgba(201,169,110,0.03) 0%, transparent 50%);
-  animation:waterMove 8s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes waterMove{
-  0%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(30px,-20px) scale(1.05)}
-  66%{transform:translate(-20px,20px) scale(0.95)}
-  100%{transform:translate(0,0) scale(1)}
-}
-
-#hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px;position:relative;z-index:1}
-#hero p{font-size:1.3rem;margin-bottom:30px;position:relative;z-index:1}
-
-.btn{display:inline-block;padding:15px 35px;background:#c9a96e;color:#000;text-decoration:none;font-weight:800;font-size:1.1rem;border-radius:50px;margin:8px;transition:0.3s;position:relative;z-index:1}
+.btn{display:inline-block;padding:15px 35px;background:#c9a96e;color:#000;text-decoration:none;font-weight:800;font-size:1.1rem;border-radius:50px;margin:8px;transition:0.3s}
 .btn:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(201,169,110,0.3)}
 .btn-whatsapp{background:#25D366;color:#fff}
 .btn-insta{background:#E4405F;color:#fff}
@@ -51,88 +40,140 @@ body{margin:0;font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;
 section{padding:4rem 1rem}
 h2{font-size:2.2rem;margin-bottom:2rem;color:#c9a96e}
 
+/* ====== المنتجات ====== */
 .products{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:600px;margin:0 auto}
 .card{background:#1a1a1a;padding:1.5rem;border-radius:15px;border:2px solid #c9a96e;transition:0.3s}
 .card:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(201,169,110,0.15)}
 
-/* ====== الدائرة ====== */
-.coffee-icon{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  border:3px solid #c9a96e;
-  margin:0 auto 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:4rem;
-  background:#0a0a0a;
-  transition:0.4s;
+/* العلم جنب اسم المنتج */
+.product-name{
+  font-size:1.3rem;
+  font-weight:700;
 }
-.card:hover .coffee-icon{
-  border-color:#f0d080;
-  box-shadow:0 0 40px rgba(201,169,110,0.3);
-  transform:scale(1.05);
+.product-name .flag{
+  font-size:1.6rem;
+  margin-left:8px;
+  display:inline-block;
 }
 
 .price{font-size:1.8rem;font-weight:800;color:#c9a96e}
 
+/* ====== آراء العملاء ====== */
+.reviews{
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.review-card{
+  background:#1a1a1a;
+  padding:1.2rem 1.5rem;
+  border-radius:15px;
+  border:1px solid #c9a96e;
+  max-width:200px;
+  flex:1;
+  min-width:150px;
+  transition:0.3s;
+}
+.review-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(201,169,110,0.1);
+}
+.review-card .stars{color:#c9a96e;font-size:1.3rem;letter-spacing:2px}
+.review-card p{font-size:0.95rem;margin:5px 0;font-weight:700}
+.review-card small{opacity:0.6;font-size:0.8rem}
+
+/* ====== تواصل ====== */
 .contact-box{background:#111;padding:2rem;border-radius:15px;max-width:500px;margin:0 auto;border:1px solid #c9a96e}
 .contact-box .btn{display:block}
-footer{padding:2rem;background:#000;border-top:2px solid #c9a96e;margin-top:2rem}
+footer{padding:2rem;background:#000;border-top:1px solid #c9a96e}
 
-@media(max-width:500px){.products{grid-template-columns:1fr}#hero h1{font-size:2.5rem}}
+@media(max-width:500px){
+  .products{grid-template-columns:1fr}
+  #hero h1{font-size:2.5rem}
+  .reviews{flex-direction:column;align-items:center}
+  .review-card{max-width:100%;width:100%}
+}
 </style>
 </head>
 <body>
 
+<!-- ====== هيرو ====== -->
 <div id="hero">
 <div>
-<h1 class="gold">☕ بن العطار</h1>
+<h1 class="gold pulse-gold">☕ بن العطار</h1>
 <p>قهوة تصنع للذوق</p>
 <a href="tel:01030516417" class="btn">اطلب الآن</a>
 </div>
 </div>
 
+<!-- ====== المنتجات ====== -->
 <section>
 <h2>منتجاتنا</h2>
 <div class="products">
 
-  <!-- قهوة تركي سادة 🇹🇷 -->
   <div class="card">
-    <div class="coffee-icon">🇹🇷</div>
-    <h3>قهوة تركي سادة</h3>
+    <div class="product-name">
+      <span class="flag">🇹🇷</span> قهوة تركي سادة
+    </div>
     <div class="price">30 جنيه</div>
   </div>
 
-  <!-- قهوة تركي محوج 🇹🇷 -->
   <div class="card">
-    <div class="coffee-icon">🇹🇷</div>
-    <h3>قهوة تركي محوج</h3>
+    <div class="product-name">
+      <span class="flag">🇹🇷</span> قهوة تركي محوج
+    </div>
     <div class="price">35 جنيه</div>
   </div>
 
-  <!-- قهوة فرنساوي سادة 🇫🇷 -->
   <div class="card">
-    <div class="coffee-icon">🇫🇷</div>
-    <h3>قهوة فرنساوي سادة</h3>
+    <div class="product-name">
+      <span class="flag">🇫🇷</span> قهوة فرنساوي سادة
+    </div>
     <div class="price">45 جنيه</div>
   </div>
 
-  <!-- قهوة فرنساوي محوج 🇫🇷 -->
   <div class="card">
-    <div class="coffee-icon">🇫🇷</div>
-    <h3>قهوة فرنساوي محوج</h3>
+    <div class="product-name">
+      <span class="flag">🇫🇷</span> قهوة فرنساوي محوج
+    </div>
     <div class="price">50 جنيه</div>
   </div>
 
 </div>
 </section>
 
+<!-- ====== آراء العملاء ====== -->
+<section>
+<h2>🗣️ آراء عملائنا</h2>
+<div class="reviews">
+  <div class="review-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>"أفضل قهوة في الشرقية"</p>
+    <small>- أحمد</small>
+  </div>
+  <div class="review-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>"طعم ولا أروع 😍"</p>
+    <small>- مريم</small>
+  </div>
+  <div class="review-card">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>"توصيل سريع وجودة عالية"</p>
+    <small>- يوسف</small>
+  </div>
+</div>
+</section>
+
+<!-- ====== تواصل ====== -->
 <section>
 <h2>تواصل معنا</h2>
 <div class="contact-box">
-<h3>📍 أبو كبير - الشرقية - خلف المستشفى المركزي</h3>
+<h3>أبو كبير - الشرقية - خلف المستشفى المركزي</h3>
 <p style="font-size:1.3rem;margin:15px 0">01030516417</p>
 <a href="tel:01030516417" class="btn">📞 اتصال</a>
 <a href="https://wa.me/201030516417" class="btn btn-whatsapp">💬 واتساب</a>
