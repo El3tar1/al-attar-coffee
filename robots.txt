@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://el3tar1.github.io/al-attar-coffee/sitemap.xml
