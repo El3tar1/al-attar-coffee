@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>بن العطار - قهوة تصنع بكل ذوق</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet" />
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-y:scroll}
+        body{font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;overflow-x:hidden}
+        section{height:100vh;width:100%;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;position:relative;overflow:hidden}
+        .gold{color:#c9a96e}
+        #hero{padding:0}
+        #hero .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.45;filter:brightness(0.7)}
+        #hero .hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,rgba(10,10,10,0.3) 0%,rgba(10,10,10,0.8) 100%);z-index:1}
+        #hero .hero-content{position:relative;z-index:2;text-align:center}
+        .cinematic-glow{position:absolute;width:60%;height:60%;background:radial-gradient(circle,rgba(201,169,110,0.08) 0%,transparent 70%);border-radius:50%;top:20%;left:20%;z-index:0;animation:glow-pulse 6s ease-in-out infinite alternate}
+        @keyframes glow-pulse{0%{transform:scale(1);opacity:0.4}100%{transform:scale(1.6);opacity:0.9}}
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.9s}
+        .reveal.active{opacity:1;transform:translateY(0)}
+        h1{font-size:clamp(3.5rem,12vw,6rem);font-weight:800}
+        h2{font-size:clamp(2.2rem,7vw,4rem);font-weight:700}
+        .slogan-arabic{font-size:clamp(1.8rem,5vw,3.2rem);font-weight:700}
+        .navbar{position:fixed;top:0;left:0;width:100%;padding:1.2rem 2.5rem;background:rgba(10,10,10,0.7);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,110,0.15);display:flex;justify-content:space-between;align-items:center;z-index:999}
+        .navbar-brand{font-size:1.5rem;font-weight:800;color:#c9a96e}
+        .nav-btn{font-size:0.9rem;color:#f5f2eb;background:rgba(201,169,110,0.12);padding:0.4rem 1.2rem;border-radius:50px;border:1px solid rgba(201,169,110,0.25);text-decoration:none}
+        .gold-line{width:80px;height:3px;background:#c9a96e;margin:1rem auto;border-radius:10px}
+        .badge-location{font-size:0.85rem;color:rgba(245,242,235,0.6);background:rgba(255,255,255,0.04);padding:0.3rem 1.5rem;border-radius:50px;border:1px solid rgba(255,255,255,0.06);margin-top:1.5rem}
+        .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;width:100%;max-width:550px}
+        .price-item{background:rgba(201,169,110,0.05);border:1px solid rgba(201,169,110,0.1);padding:1.5rem;border-radius:16px;transition:0.3s;text-align:center}
+        .price-item:hover{border-color:#c9a96e;transform:translateY(-5px);box-shadow:0 0 30px rgba(201,169,110,0.2)}
+        .price-name{font-size:1.3rem;font-weight:700;margin-bottom:0.5rem}
+        .price-tag{font-size:1.8rem;font-weight:800;color:#c9a96e}
+        .btn-group{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap}
+        .whatsapp-btn{background:#25D366;color:#fff;padding:1rem 2.5rem;border-radius:60px;text-decoration:none;font-weight:700;font-size:1.2rem}
+        .insta-btn{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;padding:1rem 2.5rem;border-radius:60px;text-decoration:none;font-weight:700;font-size:1.2rem}
+        .cta-phone{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:#c9a96e;text-decoration:none;background:rgba(201,169,110,0.06);padding:0.5rem 2.5rem;border-radius:60px;border:1px solid rgba(201,169,110,0.2)}
+        .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(201,169,110,0.3);font-size:1.6rem;animation:bounce-down 2s ease-in-out infinite}
+        @keyframes bounce-down{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+        @media(max-width:600px){.price-grid{grid-template-columns:1fr}.navbar{padding:0.8rem 1.2rem}.btn-group{flex-direction:column}}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">☕ بن العطار</span>
+        <div>
+            <a href="https://wa.me/201030516417" target="_blank" class="nav-btn">💬 واتساب</a>
+            <a href="https://www.instagram.com/memoo_o_0" target="_blank" class="nav-btn">📷 انستا</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://cdn.pixabay.com/video/2022/10/31/137875-763898458_large.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div><div class="cinematic-glow"></div>
+        <div class="hero-content">
+            <h1 class="gold reveal active">بن العطار</h1>
+            <div class="gold-line reveal active"></div>
+            <h2 class="slogan-arabic reveal active">قهوه تصنع بكل ذوق</h2>
+            <div class="badge-location reveal active">📍 الشرقية - أبو كبير - خلف المستشفى المركزي</div>
+            <div class="btn-group reveal active">
+                <a href="https://wa.me/201030516417?text=عايز%20اطلب%20من%20بن%20العطار" target="_blank" class="whatsapp-btn">اطلب على واتساب</a>
+                <a href="https://www.instagram.com/memoo_o_0" target="_blank" class="insta-btn">تابعنا على انستا</a>
+            </div>
+        </div>
+        <div class="scroll-hint">⌄</div>
+    </section>
+
+    <section id="prices">
+        <h2 class="gold reveal">قائـمة المشروبات</h2>
+        <p style="opacity:0.8" class="reveal">طازج ومحمص يوميا</p>
+        <div class="price-grid reveal">
+            <div class="price-item"><div class="price-name">قهوة تركي</div><div class="price-tag">30 ج</div></div>
+            <div class="price-item"><div class="price-name">قهوة تركي دبل</div><div class="price-tag">35 ج</div></div>
+            <div class="price-item"><div class="price-name">قهوة فرنساوي</div><div class="price-tag">45 ج</div></div>
+            <div class="price-item"><div class="price-name">قهوة بندق</div><div class="price-tag">50 ج</div></div>
+        </div>
+        <div class="scroll-hint">⌄</div>
+    </section>
+
+    <section id="location">
+        <h2 style="font-weight:300" class="reveal">نورنا في</h2>
+        <h2 class="gold reveal">المحـل</h2>
+        <p style="font-size:1.3rem;opacity:0.7;margin-top:0.3rem" class="reveal">الشرقية - أبو كبير - خلف المستشفى المركزي</p>
+        <div class="btn-group reveal">
+            <a href="https://wa.me/201030516417" target="_blank" class="whatsapp-btn">واتساب</a>
+            <a href="https://www.instagram.com/memoo_o_0" target="_blank" class="insta-btn">انستجرام</a>
+        </div>
+    </section>
+
+    <section id="cta">
+        <h1 class="gold reveal">جاهز لِفنجانك؟</h1>
+        <a href="tel:01030516417" class="cta-phone reveal">📞 010 305 16417</a>
+        <div class="btn-group reveal">
+            <a href="https://wa.me/201030516417?text=عايز%20اطلب%20من%20بن%20العطار" target="_blank" class="whatsapp-btn">اطلب واتساب</a>
+            <a href="https://www.instagram.com/memoo_o_0" target="_blank" class="insta-btn">DM على انستا</a>
+        </div>
+    </section>
+
+    <script>
+        const reveals=document.querySelectorAll('.reveal');
+        function checkReveal(){const windowHeight=window.innerHeight;reveals.forEach(el=>{if(el.getBoundingClientRect().top<windowHeight-120){el.classList.add('active')}})}
+        window.addEventListener('scroll',checkReveal);window.addEventListener('load',checkReveal);
+    </script>
+</body>
+</html>
