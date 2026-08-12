@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>بن العطار - قهوة تصنع للذوق</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb}
+body{margin:0;font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;text-align:center}
 .gold{color:#c9a96e}
-#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;background:linear-gradient(rgba(10,10,10,0.7),rgba(10,10,10,0.9)),url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2070') center/cover}
-#hero h1{font-size:4rem;font-weight:800;margin-bottom:1rem}
-#hero p{font-size:1.5rem;margin-bottom:2rem}
-.btn{display:inline-block;padding:18px 40px;background:#c9a96e;color:#0a0a0a;text-decoration:none;font-weight:800;font-size:1.2rem;border-radius:50px;margin:10px;transition:.3s;width:250px}
-.btn:hover{transform:translateY(-5px)}
-.btn-call{background:#c9a96e;color:#0a0a0a}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2070') center/cover}
+#hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px}
+#hero p{font-size:1.3rem;margin-bottom:30px}
+.btn{display:inline-block;padding:15px 35px;background:#c9a96e;color:#000;text-decoration:none;font-weight:800;font-size:1.1rem;border-radius:50px;margin:8px}
 .btn-whatsapp{background:#25D366;color:#fff}
-.btn-insta{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
-section{padding:5rem 2rem;text-align:center}
-h2{font-size:2.5rem;margin-bottom:2rem;color:#c9a96e}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;max-width:800px;margin:0 auto}
-.card{background:#1a1a1a;padding:2rem;border-radius:20px;border:2px solid #c9a96e;transition:.3s}
-.card:hover{transform:translateY(-10px)}
-.price{font-size:2rem;font-weight:800;color:#c9a96e}
-.contact
+.btn-insta{background:#E4405F;color:#fff}
+section{padding:4rem 1rem}
+h2{font-size:2.2rem;margin-bottom:2rem;color:#c9a96e}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:600px;margin:0 auto}
+.card{background:#1a1a1a;padding:1.5rem;border-radius:15px;border:2px solid #c9a96e}
+.price{font-size:1.8rem;font-weight:800;color:#c9a96e}
+.contact-box{background:#111;padding:2rem;border-radius:15px;max-width:500px;margin:0 auto}
+.contact-box .btn{display:block}
+footer{padding:2rem;background:#000;border-top:1px solid #c9a96e}
+</style>
+</head>
+<body>
+
+<div id="hero">
+<div>
+<h1 class="gold">بن العطار</h1>
+<p>قهوة تصنع للذوق</p>
+<a href="tel:01030516417" class="btn">اطلب الآن</a>
+</div>
+</div>
+
+<section>
+<h2>منتجاتنا</h2>
+<div class="products">
+<div class="card"><h3>قهوة تركي سادة</h3><div class="price">30 جنيه</div></div>
+<div class="card"><h3>قهوة تركي محوج</h3><div class="price">35 جنيه</div></div>
+<div class="card"><h3>قهوة فرنساوي سادة</h3><div class="price">45 جنيه</div></div>
+<div class="card"><h3>قهوة فرنساوي محوج</h3><div class="price">50 جنيه</div></div>
+</div>
+</section>
+
+<section>
+<h2>تواصل معنا</h2>
+<div class="contact-box">
+<h3>أبو كبير - الشرقية - خلف المستشفى المركزي</h3>
+<p style="font-size:1.3rem;margin:15px 0">01030516417</p>
+<a href="tel:01030516417" class="btn">📞 اتصال</a>
+<a href="https://wa.me/201030516417" class="btn btn-whatsapp">💬 واتساب</a>
+<a href="https://www.instagram.com/memoo_o_0" class="btn btn-insta">📸 انستجرام</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 بن العطار - قهوة تصنع للذوق</p>
+</footer>
+
+</body>
+</html>
