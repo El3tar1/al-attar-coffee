@@ -6,51 +6,180 @@
 <title>بن العطار - قهوة تصنع للذوق</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;text-align:center}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:#0a0a0a;color:#f5f2eb;text-align:center}
 .gold{color:#c9a96e}
+
+/* Hero */
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a0a0a 0%,#2a1f0a 100%);padding:1rem}
-#hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px}
+#hero h1{font-size:3.5rem;font-weight:800;margin-bottom:10px;text-shadow:0 0 30px rgba(201,169,110,0.3)}
 #hero p{font-size:1.3rem;margin-bottom:30px}
+
+/* Buttons */
 .btn{display:inline-block;padding:15px 35px;background:#c9a96e;color:#000;text-decoration:none;font-weight:800;font-size:1.1rem;border-radius:50px;margin:8px;transition:0.3s}
-.btn:hover{transform:scale(1.05)}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(201,169,110,0.4)}
 .btn-whatsapp{background:#25D366;color:#fff}
 .btn-insta{background:#E4405F;color:#fff}
+
 section{padding:4rem 1rem}
-h2{font-size:2.2rem;margin-bottom:2rem;color:#c9a96e}
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:600px;margin:0 auto}
-.card{background:#1a1a1a;padding:1.5rem;border-radius:15px;border:2px solid #c9a96e}
-.price{font-size:1.8rem;font-weight:800;color:#c9a96e}
-.contact-box{background:#111;padding:2rem;border-radius:15px;max-width:500px;margin:0 auto}
-.contact-box .btn{display:block}
-footer{padding:2rem;background:#000;border-top:1px solid #c9a96e}
-@media(max-width:500px){.products{grid-template-columns:1fr}}
+h2{font-size:2.2rem;margin-bottom:2rem;color:#c9a96e;position:relative;display:inline-block}
+h2::after{content:'';display:block;width:60%;height:3px;background:#c9a96e;margin:0.5rem auto 0;border-radius:4px}
+
+/* ======================================== */
+/*         الـ 4 تحسينات في المنتجات          */
+/* ======================================== */
+
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:650px;margin:0 auto}
+
+/* 1️⃣ ألوان مميزة لكل منتج + 3️⃣ ظل ونور (Glow) */
+.card{
+  background:linear-gradient(145deg,#1a1a1a,#121212);
+  padding:1.8rem 1rem;
+  border-radius:20px;
+  border:2px solid #c9a96e;
+  transition:0.4s ease;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ظل ونور (Glow) */
+.card::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  opacity:0;
+  transition:0.6s;
+  pointer-events:none;
+}
+.card:hover::before{opacity:1}
+
+/* 4️⃣ تأثير hover */
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 50px rgba(201,169,110,0.3), inset 0 0 40px rgba(201,169,110,0.05);
+}
+
+/* ألوان مختلفة لكل منتج */
+.card:nth-child(1){border-color:#f0c27a;}
+.card:nth-child(1) .price{color:#f0c27a;text-shadow:0 0 25px rgba(240,194,122,0.5);}
+
+.card:nth-child(2){border-color:#d4a373;}
+.card:nth-child(2) .price{color:#d4a373;text-shadow:0 0 25px rgba(212,163,115,0.5);}
+
+.card:nth-child(3){border-color:#b8860b;}
+.card:nth-child(3) .price{color:#b8860b;text-shadow:0 0 25px rgba(184,134,11,0.5);}
+
+.card:nth-child(4){border-color:#e8c37a;}
+.card:nth-child(4) .price{color:#e8c37a;text-shadow:0 0 25px rgba(232,195,122,0.5);}
+
+.card h3{
+  font-size:1.5rem;
+  margin-bottom:5px;
+  color:#fff;
+  font-weight:800;
+}
+
+/* السعر */
+.price{
+  font-size:2rem;
+  font-weight:800;
+  margin-top:8px;
+  transition:0.3s;
+}
+
+/* 2️⃣ أيقونات ورموز */
+.card .icon{
+  font-size:2.5rem;
+  display:block;
+  margin-bottom:5px;
+}
+
+.card .badge{
+  display:inline-block;
+  background:#c9a96e;
+  color:#000;
+  font-size:0.7rem;
+  font-weight:800;
+  padding:3px 14px;
+  border-radius:20px;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+
+/* ====== تواصل ====== */
+.contact-box{background:linear-gradient(145deg,#111,#1a1a1a);padding:2.5rem 2rem;border-radius:20px;max-width:500px;margin:0 auto;border:1px solid #c9a96e}
+.contact-box h3{font-size:1.2rem;margin-bottom:10px;color:#c9a96e}
+.contact-box .btn{display:block;width:80%;margin:10px auto}
+
+footer{padding:2rem;background:#000;border-top:2px solid #c9a96e;margin-top:2rem}
+
+/* موبايل */
+@media(max-width:500px){
+  .products{grid-template-columns:1fr;gap:1.5rem}
+  #hero h1{font-size:2.8rem}
+  .contact-box .btn{width:100%}
+}
 </style>
 </head>
 <body>
 
 <div id="hero">
 <div>
-<h1 class="gold">بن العطار</h1>
+<h1 class="gold">☕ بن العطار</h1>
 <p>قهوة تصنع للذوق</p>
-<a href="tel:01030516417" class="btn">اطلب الآن</a>
+<a href="tel:01030516417" class="btn">📞 اطلب الآن</a>
 </div>
 </div>
 
 <section>
-<h2>منتجاتنا</h2>
+<h2>🌟 منتجاتنا</h2>
 <div class="products">
-<div class="card"><h3>قهوة تركي سادة</h3><div class="price">30 جنيه</div></div>
-<div class="card"><h3>قهوة تركي محوج</h3><div class="price">35 جنيه</div></div>
-<div class="card"><h3>قهوة فرنساوي سادة</h3><div class="price">45 جنيه</div></div>
-<div class="card"><h3>قهوة فرنساوي محوج</h3><div class="price">50 جنيه</div></div>
+
+  <!-- 1️⃣ منتج -->
+  <div class="card">
+    <span class="icon">🔥</span>
+    <div class="badge">الأكثر طلباً</div>
+    <h3>قهوة تركي<br>محوج</h3>
+    <div class="price">35 جنيه</div>
+  </div>
+
+  <!-- 2️⃣ منتج -->
+  <div class="card">
+    <span class="icon">☕</span>
+    <div class="badge">كلاسيك</div>
+    <h3>قهوة تركي<br>سادة</h3>
+    <div class="price">30 جنيه</div>
+  </div>
+
+  <!-- 3️⃣ منتج -->
+  <div class="card">
+    <span class="icon">🇫🇷</span>
+    <div class="badge">فرنساوي</div>
+    <h3>قهوة فرنساوي<br>محوج</h3>
+    <div class="price">50 جنيه</div>
+  </div>
+
+  <!-- 4️⃣ منتج -->
+  <div class="card">
+    <span class="icon">🇫🇷</span>
+    <div class="badge">فرنساوي</div>
+    <h3>قهوة فرنساوي<br>سادة</h3>
+    <div class="price">45 جنيه</div>
+  </div>
+
 </div>
 </section>
 
 <section>
-<h2>تواصل معنا</h2>
+<h2>📞 تواصل معنا</h2>
 <div class="contact-box">
-<h3>أبو كبير - الشرقية - خلف المستشفى المركزي</h3>
-<p style="font-size:1.3rem;margin:15px 0">01030516417</p>
+<h3>📍 أبو كبير - الشرقية - خلف المستشفى المركزي</h3>
+<p style="font-size:1.5rem;margin:15px 0;font-weight:800;color:#c9a96e">01030516417</p>
 <a href="tel:01030516417" class="btn">📞 اتصال</a>
 <a href="https://wa.me/201030516417" class="btn btn-whatsapp">💬 واتساب</a>
 <a href="https://www.instagram.com/memoo_o_0" class="btn btn-insta">📸 انستجرام</a>
